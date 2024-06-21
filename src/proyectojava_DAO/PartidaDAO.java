@@ -20,7 +20,7 @@ public class PartidaDAO {
     public static void crearPartida(int usuarioId1, int usuarioId2,Connection conexion) throws SQLException {
         String query = "INSERT INTO Partida (usuario_id_1, usuario_id_2) VALUES (?, ?)";
 
-        try (PreparedStatement statement = connection.prepareStatement(query)) {
+        try (PreparedStatement statement = conexion.prepareStatement(query)) {
             statement.setInt(1, usuarioId1);
             statement.setInt(2, usuarioId2);
 
